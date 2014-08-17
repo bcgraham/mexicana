@@ -74,9 +74,7 @@ func main() {
 		log.Fatal("listen error: ", err)
 	}
 	defer l.Close()
-	for {
-		go rpc.Accept(l)
-	}
+	go rpc.Accept(l)
 }
 
 func NewAlertRequestListener() (arl *AlertRequestListener) {
